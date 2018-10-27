@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
@@ -24,7 +26,21 @@ dependencies {
     implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha06'
     implementation 'android.arch.navigation:navigation-ui:1.0.0-alpha06'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.firebase:firebase-auth:16.0.2'
+    implementation 'com.google.firebase:firebase-storage:16.0.1'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+repositories {
+    mavenCentral()
+}
+
+// paste json file of firebase else it will give google-service.json exception.
+apply plugin: 'com.google.gms.google-services'

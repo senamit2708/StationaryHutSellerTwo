@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mobile_navigation">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/productUpload">
+    <fragment
+        android:id="@+id/productUpload"
+        android:name="com.example.stationaryhutsellertwo.fragments.ProductUpload"
+        android:label="activity_product_upload"
+        tools:layout="@layout/activity_product_upload" >
+        <action
+            android:id="@+id/action_productUpload_to_productDetails"
+            app:destination="@id/productDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetails"
+        android:name="com.example.stationaryhutsellertwo.fragments.ProductDetails"
+        android:label="activity_product_details"
+        tools:layout="@layout/activity_product_details" />
 </navigation>
