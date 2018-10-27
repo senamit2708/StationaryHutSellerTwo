@@ -243,7 +243,7 @@ public class ProductUpload extends Fragment {
         String key = mDatabase.child("products").push().getKey();
         Product product = new Product(productName, productNumber,Integer.parseInt(productPrice),
                 productBrand, Integer.parseInt(minimumOrder), Integer.parseInt(productQuantity),
-                downloadImageUri.toString());
+                downloadImageUri.toString(),category);
         Map<String, Object> productValues = product.toMap();
         Map<String, Object> childUpdate = new HashMap<>();
         childUpdate.put("/products/"+productNumber, productValues);
